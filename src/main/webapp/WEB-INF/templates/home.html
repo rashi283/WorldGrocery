@@ -31,6 +31,13 @@
       <li><a href="userprofile.html" th:href="@{/userprofile}">See User Profile</a></li>
     </ol>
       
+    <p>What would you like to buy today ?</p>  
+    
+    <form name="input" action="/vendor/list.html" method="get">
+	Username: <input> type="text" name="user"</input>
+	<input> type="submit" value="Submit"</input>
+	</form>
+    
     <p>Now you are looking at a <span th:text="'working web application'">template file</span>.</p>
   
     <div th:include="footer::copy">&copy; 2011 The Static Templates</div>
