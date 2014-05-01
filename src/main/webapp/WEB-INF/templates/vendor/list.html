@@ -23,15 +23,15 @@
       </thead>
       <tbody th:remove="all-but-first">
         <tr th:each="vend : ${vends}" th:class="${vendStat.odd}? 'odd'">
-          <td th:text="${vend.name}">Onions</td>
-          <td th:text="${vend.prod.name}">2.41</td>
-          <td th:text="${vend.prod.inStock}? #{true} : #{false}">yes</td>
+          <td th:text="${vend.id}">Onions</td>
+          <td th:text="${vend.name}">2.41</td>
+          <!--td th:text="${vend.product}? #{true} : #{false}">yes</td>
           <td>
             <span th:text="${#lists.size(prod.comments)}">2</span> comment/s
             <a href="comments.html" 
                th:href="@{/product/comments(prodId=${prod.id})}" 
                th:unless="${#lists.isEmpty(prod.comments)}">view</a>
-          </td>
+          </td-->
         </tr>
         <tr class="odd">
           <td>Blue Lettuce</td>
