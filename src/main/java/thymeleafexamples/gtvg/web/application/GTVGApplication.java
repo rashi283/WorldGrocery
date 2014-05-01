@@ -33,6 +33,7 @@ import thymeleafexamples.gtvg.web.controller.OrderDetailsController;
 import thymeleafexamples.gtvg.web.controller.OrderListController;
 import thymeleafexamples.gtvg.web.controller.ProductCommentsController;
 import thymeleafexamples.gtvg.web.controller.ProductListController;
+import thymeleafexamples.gtvg.web.controller.SafewayController;
 import thymeleafexamples.gtvg.web.controller.SubscribeController;
 import thymeleafexamples.gtvg.web.controller.UserProfileController;
 import thymeleafexamples.gtvg.web.controller.VendorListController;
@@ -87,6 +88,7 @@ public class GTVGApplication {
         controllersByURL.put("/userprofile", new UserProfileController());
         controllersByURL.put("/vendor/list", new VendorListController());
         controllersByURL.put("/vendor/products", new VendorProductsController());
+        controllersByURL.put("/vendor/safeway", new SafewayController());
         
         return controllersByURL;
         

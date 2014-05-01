@@ -22,10 +22,9 @@
           <td th:text="${vend.name}">2.41</td>
           <!--td th:text="${vend.product}? #{true} : #{false}">yes</td-->
           <td>
-            <span th:text="${#lists.size(vend.products)}">2</span> comment/s
-            <a href="products.html" 
-               th:href="@{/vendor/products(vendId=${vend.id})}" 
-               th:unless="${#lists.isEmpty(vend.products)}">view</a>
+            <!--span th:text="${#lists.size(vend.products)}">2</span> comment/s-->
+            <a href="/safeway.html"
+            th:href="@{/vendor/safeway}" >view</a>
           </td>
         </tr>
         <tr class="odd">
