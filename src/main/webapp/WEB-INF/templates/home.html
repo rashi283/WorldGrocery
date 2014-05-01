@@ -38,11 +38,11 @@
 <!-- 	<input> type="submit" value="Submit"</input> -->
 <!-- 	</form> -->
 
-	<form action="home.html" th:action="@{/home}">
+	<form action="home.html" th:action="@{/product/list}">
       <fieldset>
         <input type="text" name="product" />
-        <!--  input type="submit" value="Find available products!"  /-->
-        <a href="home.html" th:href="@{/vendor/list}">view</a>
+        <input type="submit" value="Find available products!" />
+        <!--a href="home.html" th:href="@{/result/list}">view</a-->
       </fieldset>
     </form>
     

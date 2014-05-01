@@ -27,13 +27,34 @@ public class VendorRepository
         this.vendorsById = new LinkedHashMap<Integer, Vendor>();
         
         final Vendor vend1 = new Vendor();
-        Product prod1 = new Product();
-        
         vend1.setId(Integer.valueOf(1));
         vend1.setName("Safeway");
         vend1.setProducts();
-        
         this.vendorsById.put(vend1.getId(), vend1);    
+        
+        final Vendor vend2 = new Vendor();
+        vend2.setId(Integer.valueOf(2));
+        vend2.setName("Trader Joe");
+        vend2.setProducts();
+        this.vendorsById.put(vend2.getId(), vend2);    
+        
+        final Vendor vend3 = new Vendor();
+        vend3.setId(Integer.valueOf(3));
+        vend3.setName("Whole Foods");
+        vend3.setProducts();
+        this.vendorsById.put(vend3.getId(), vend3);    
+        
+        final Vendor vend4 = new Vendor();
+        vend4.setId(Integer.valueOf(4));
+        vend4.setName("Sprouts");
+        vend4.setProducts();
+        this.vendorsById.put(vend4.getId(), vend4);  
+        
+        final Vendor vend5 = new Vendor();
+        vend5.setId(Integer.valueOf(5));
+        vend5.setName("Target");
+        vend5.setProducts();
+        this.vendorsById.put(vend5.getId(), vend5);  
         
     }
     
