@@ -33,10 +33,18 @@
       
     <p>What would you like to buy today ?</p>  
     
-    <form name="input" action="/vendor/list.html" method="get">
-	Username: <input> type="text" name="user"</input>
-	<input> type="submit" value="Submit"</input>
-	</form>
+<!--     <form name="input" action="/vendor/list.html" method="get"> -->
+<!-- 	Username: <input> type="text" name="user"</input> -->
+<!-- 	<input> type="submit" value="Submit"</input> -->
+<!-- 	</form> -->
+
+	<form action="home.html" th:action="@{/home}">
+      <fieldset>
+        <input type="text" name="product" />
+        <!--  input type="submit" value="Find available products!"  /-->
+        <a href="home.html" th:href="@{/vendor/list}">view</a>
+      </fieldset>
+    </form>
     
     <p>Now you are looking at a <span th:text="'working web application'">template file</span>.</p>
   
