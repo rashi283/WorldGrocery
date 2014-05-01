@@ -28,6 +28,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
 
+import thymeleafexamples.gtvg.business.entities.Vendor;
+import thymeleafexamples.gtvg.business.services.VendorService;
+
 public class SafewayController implements IGTVGController {
 
     
@@ -40,9 +43,12 @@ public class SafewayController implements IGTVGController {
             final HttpServletRequest request, final HttpServletResponse response,
             final ServletContext servletContext, final TemplateEngine templateEngine) 
             throws Exception {
+    	
+    	final VendorService vendorService = new VendorService();
+    	final Vendor vendor = vendorService.findById(1);
         
-        WebContext ctx = new WebContext(request, response, servletContext, request.getLocale());
-        ctx.setVariable("today", Calendar.getInstance());
+        final WebContext ctx = new WebContext(request, response, servletContext, request.getLocale());
+        ctx.setVariable("safeway", vendor);
         
         templateEngine.process("vendor/safeway", ctx, response.getWriter());
         
