@@ -2,6 +2,7 @@ package thymeleafexamples.gtvg.business.entities;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Vendor 
 {
@@ -45,6 +46,7 @@ public class Vendor
 		this.products.add(prod2);
 		
 	}
+
 	
 	
 }

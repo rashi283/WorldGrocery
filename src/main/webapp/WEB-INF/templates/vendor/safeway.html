@@ -11,10 +11,28 @@
 
   <body id="body">
 
-    <h1>Safeway</h1>
+    <h1>Safeway <!--span th:text="${vend1.id}">Hot Garlic</span--></h1>
+  
+    <table>
+    <thead>
+        <tr>
+          <th>PRODUCT</th>
+          <th>PRICE</th>
+          <th>IN STOCK</th>
+          <th>BUY</th>
+        </tr>
+      </thead>
+      <tr th:each="p : ${safeway.products}" th:class="${pStat.odd}? 'odd'">
+      <!--tr th:each="p : ${vend1.products}"-->
+        <td th:text="${p.name}">Default</td>
+        <td th:text="${p.price}">Default</td>
+        <td th:text="${p.inStock}">Default</td>
+        <td>Buy</td>
+      </tr>
+    </table>
   
     <p>
-      
+      <a href="list.html" th:href="@{/vendor/list}">Return to Vendor list</a>
     </p>
     
   </body>
