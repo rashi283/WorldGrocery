@@ -30,7 +30,7 @@ import org.thymeleaf.context.WebContext;
 
 public class AvailabilityController implements IGTVGController {
 
-    
+   // static String productValue;
     public AvailabilityController() {
         super();
     }
@@ -43,9 +43,10 @@ public class AvailabilityController implements IGTVGController {
         
     	WebContext ctx = new WebContext(request, response, servletContext, request.getLocale());
         ctx.setVariable("today", Calendar.getInstance());
-        
+     //   productValue=response.get
+        final String prodValue = String.valueOf(request.getParameter("product"));
         templateEngine.process("availability", ctx, response.getWriter());
-        
+        System.out.println("value is" + prodValue);
     }
 
 }

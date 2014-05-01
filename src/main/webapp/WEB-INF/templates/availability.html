@@ -12,10 +12,52 @@
   <body id="body">
 
     <h1>Availability</h1>
+  <h1>Product list</h1>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Available In Stores</th>
+         
+      
+        </tr>
+      </thead>
+      <tbody th:remove="all-but-first">
+      <tr th:each= "vend : ${vends}" th:class="${vendStat.odd}? 'odd'">
+        <tr th:value="product : ${prod.name}" th:class="${prodStat.odd}? 'odd'">
+         
+          <td th:text="${vend.prod.inStock}? #{true} : #{false}">yes</td>
+     <!--     <td>
+            <span th:text="${#lists.size(prod.comments)}">2</span> comment/s
+            <a href="comments.html" 
+               th:href="@{/product/comments(prodId=${prod.id})}" 
+               th:unless="${#lists.isEmpty(prod.comments)}">view</a> 
+          </td>--> 
+        </tr>
+        <tr class="odd">
+          <td>Blue Lettuce</td>
+          <td>9.55</td>
+          <td>no</td>
+          <td>
+            <span>0</span> comment/s
+          </td>
+        </tr>
+        <tr>
+          <td>Mild Cinnamon</td>
+          <td>1.99</td>
+          <td>yes</td>
+          <td>
+            <span>3</span> comment/s
+            <a href="comments.html">view</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   
     <p>
-      
+      <a href="../home.html" th:href="@{/}">Return to home</a>
     </p>
+  
     
   </body>
   
