@@ -4,7 +4,7 @@
       xmlns:th="http://www.thymeleaf.org">
 
   <head>
-    <title>Virtual Grocery</title>
+    <title>Virtual Grocery Store</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" media="all" href="../../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
   </head>
@@ -24,7 +24,7 @@
           <th>PRODUCT</th>
           <th>PRICE</th>
           <th>IN STOCK</th>
-          <th>Add to Cart</th>
+          <th>Add to chart</th>
           <th>BUY</th>
         </tr>
       </thead>
@@ -33,19 +33,22 @@
         <td th:text="${p.name}">Default</td>
         <td th:text="${p.price}">Default</td>
         <td th:text="${p.inStock}">Default</td>
-        <td>
+        <!-- <td>
           <form action="/safeway.html" th:action="@{/vendor/safeway}">
       			<fieldset>
-        		<input type="submit" value="Add to Cart" />
+      			<input type="submit" value="Add to Cart" />
      		 	</fieldset>
     	 </form>
-    	</td>
-        <td><form action="/safeway.html" th:action="@{/vendor/safeway}">
+    	</td> -->
+    	<td><a href="Checkout.html" th:href="@{/Checkout(prodId=${p.id})}">Add To Cart</a></td>
+        <td><a href="Checkout.html" th:href="@{/Checkout(prodId=${p.id})}">Buy</a></td>
+        <!--  <td><form action="Checkout.html" th:action="@{/Checkout(prodId=${p.id})}">
       			<fieldset>
         		<input type="submit" value="Buy" />
      		 	</fieldset>
     		</form>
-    	</td>
+    	</td> -->
+
       </tr>
     </table>
     

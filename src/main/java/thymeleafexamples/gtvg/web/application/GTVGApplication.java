@@ -27,6 +27,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
+import thymeleafexamples.gtvg.web.controller.AddController;
 import thymeleafexamples.gtvg.web.controller.AvailabilityController;
 import thymeleafexamples.gtvg.web.controller.HomeController;
 import thymeleafexamples.gtvg.web.controller.IGTVGController;
@@ -102,6 +103,7 @@ public class GTVGApplication {
         controllersByURL.put("/vendor/sprouts", new SproutsController());
         controllersByURL.put("/vendor/target", new TargetController());
         controllersByURL.put("/availability", new AvailabilityController());
+        controllersByURL.put("/Checkout", new AddController());
         
         return controllersByURL;
         
