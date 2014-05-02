@@ -1,0 +1,32 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Good Thymes Virtual Grocery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+  </head>
+
+  <body>
+
+    <h1>Login</h1>
+
+    <form action="home.html" th:action="@{/}">
+      <fieldset>
+      	<input type="text" name="username" />
+      	<input type="password" name="password" />
+        <input type="submit" value="Login" />
+        <!--a href="home.html" th:href="@{/result/list}">view</a-->
+      </fieldset>
+    </form>
+  
+    <p>
+      <a href="home.html" th:href="@{/}">Return to home</a>
+    </p>
+    
+  </body>
+  
+</html>
+

@@ -83,6 +83,15 @@ public class CustomerRepository {
         cust6.setCustomerSince(CalendarUtil.calendarFor(2010, 5, 18, 20, 30));
         this.customersById.put(cust6.getId(), cust6);
         
+        final Customer cust7 = new Customer();
+        cust7.setId(Integer.valueOf(7));
+        cust7.setName("Rashi Agrawal");
+        cust7.setUsername("rashi");
+        cust7.setPassword("rashi");
+        cust6.setCustomerSince(CalendarUtil.calendarFor(2011, 6, 21, 10, 30));
+        this.customersById.put(cust7.getId(), cust7);
+        
+        
     }
     
     
@@ -94,6 +103,7 @@ public class CustomerRepository {
     public Customer findById(final Integer id) {
         return this.customersById.get(id);
     }
+
     
     
     
