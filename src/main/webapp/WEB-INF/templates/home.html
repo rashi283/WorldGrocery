@@ -12,8 +12,8 @@
   <body>
 
     <div>
-      <img src="../../images/gtvglogo.png" alt="GTVG logo" title="GTVG logo" 
-           th:src="@{/images/gtvglogo.png}" th:alt-title="#{logo}" />
+      <img src="../../images/grocerry.png" alt="GTVG logo" title="GTVG logo" 
+           th:src="@{/images/grocerry.png}" th:alt-title="#{logo}" />
     </div>
   
     <p th:utext="#{home.welcome(${session.user.name})}">Welcome to our grocery store, Sebastian!</p>
@@ -46,9 +46,9 @@
       </fieldset>
     </form>
     
-    <p>Now you are looking at a <span th:text="'working web application'">template file</span>.</p>
+    <p>Now you are at a <span th:text="'Virtual Grocerry Store'">template file</span>.</p>
   
-    <div th:include="footer::copy">&copy; 2011 The Static Templates</div>
+    <!--  <div th:include="footer::copy">&copy; 2011 The Static Templates</div>-->
   
   </body>
   
