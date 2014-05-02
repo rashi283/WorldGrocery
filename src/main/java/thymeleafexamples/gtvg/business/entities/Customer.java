@@ -26,6 +26,10 @@ public class Customer {
     private Integer id = null;
     private String name = null;
     private Calendar customerSince = null;
+    
+    private String username = null;
+    private String password = null;
+    		
 
     
     public Customer() {
@@ -55,5 +59,25 @@ public class Customer {
     public void setCustomerSince(final Calendar customerSince) {
         this.customerSince = customerSince;
     }
+
+
+	public String getUsername() {
+		return username;
+	}
+
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
     
 }

@@ -19,8 +19,6 @@
  */
 package thymeleafexamples.gtvg.web.controller;
 
-import java.awt.List;
-import java.util.ArrayList;
 import java.util.Calendar;
 
 import javax.servlet.ServletContext;
@@ -30,13 +28,10 @@ import javax.servlet.http.HttpServletResponse;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
 
-import thymeleafexamples.gtvg.business.services.CustomerService;
-import thymeleafexamples.gtvg.business.entities.Customer;
-
-public class HomeController implements IGTVGController {
+public class LoginController implements IGTVGController {
 
     
-    public HomeController() {
+    public LoginController() {
         super();
     }
     
@@ -46,30 +41,10 @@ public class HomeController implements IGTVGController {
             final ServletContext servletContext, final TemplateEngine templateEngine) 
             throws Exception {
         
-    	final String username = String.valueOf(request.getParameter("username"));
-    	final String password = String.valueOf(request.getParameter("password"));
-    	String tempString = "rashi";
-    	
-    	CustomerService customerService = new CustomerService();
-    	ArrayList<Customer> tempCustomers = (ArrayList<Customer>) customerService.findAll();
-
-    	WebContext ctx = new WebContext(request, response, servletContext, request.getLocale());
-    	
-    	for (Customer cust : tempCustomers)
-    	{
-    		if(cust.getUsername() == username && cust.getPassword() == password)
-    		{
-    			ctx.setVariable("username",cust.getUsername());
-    			System.out.println("xyzabc: " + cust.getUsername());
-    		}	
-    		else
-    			ctx.setVariable("username", tempString);
-    	}	
-    	
-        
+        WebContext ctx = new WebContext(request, response, servletContext, request.getLocale());
         ctx.setVariable("today", Calendar.getInstance());
         
-        templateEngine.process("home", ctx, response.getWriter());
+        templateEngine.process("login", ctx, response.getWriter());
         
     }
 

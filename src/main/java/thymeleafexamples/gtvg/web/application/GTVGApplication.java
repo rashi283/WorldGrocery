@@ -30,6 +30,7 @@ import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 import thymeleafexamples.gtvg.web.controller.AvailabilityController;
 import thymeleafexamples.gtvg.web.controller.HomeController;
 import thymeleafexamples.gtvg.web.controller.IGTVGController;
+import thymeleafexamples.gtvg.web.controller.LoginController;
 import thymeleafexamples.gtvg.web.controller.OrderDetailsController;
 import thymeleafexamples.gtvg.web.controller.OrderListController;
 import thymeleafexamples.gtvg.web.controller.ProductCommentsController;
@@ -84,6 +85,8 @@ public class GTVGApplication {
     private static Map<String, IGTVGController> initializeControllersByURL() {
         
         controllersByURL = new HashMap<String, IGTVGController>();
+        
+        controllersByURL.put("/login", new LoginController());
         controllersByURL.put("/", new HomeController());
         controllersByURL.put("/product/list", new ProductListController());
         controllersByURL.put("/product/comments", new ProductCommentsController());
