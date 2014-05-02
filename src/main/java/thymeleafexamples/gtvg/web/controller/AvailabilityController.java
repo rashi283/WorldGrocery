@@ -38,12 +38,12 @@ public class AvailabilityController implements IGTVGController {
 	
 	private Map<Integer,ArrayList<Product>> m = new HashMap<Integer,ArrayList<Product>>();
 	private ArrayList<String> availablestore=new ArrayList<String>();
-	
+	static int s=0;
     public AvailabilityController() {
         super();
     }
     
-    
+    VendorService vendorService1=new VendorService();
     public void process(
             final HttpServletRequest request, final HttpServletResponse response,
             
@@ -53,9 +53,20 @@ public class AvailabilityController implements IGTVGController {
     	final String prodValue = String.valueOf(request.getParameter("product"));
     	WebContext ctx = new WebContext(request, response, servletContext, request.getLocale());
         //ctx.setVariable("product_name",prodValue);
-        VendorService vendorService1=new VendorService();
+        
       
-        int p=1;
+       
+        if(s==1)
+        	availablestore.clear();
+        
+        method1(prodValue);
+        
+        ctx.setVariable("storeName", availablestore);
+        templateEngine.process("availability", ctx, response.getWriter());
+        System.out.println("value is" + prodValue);
+    }
+        public void method1(String prodValue)
+        { 
         for(int i=1;i<6;i++)
         {
          m.put(i,vendorService1.findById(i).getProducts());	
@@ -69,11 +80,10 @@ public class AvailabilityController implements IGTVGController {
         	 }
         		 
          }
-        
+        s=1;
         }
-       ctx.setVariable("storeName", availablestore);
-        templateEngine.process("availability", ctx, response.getWriter());
-        System.out.println("value is" + prodValue);
+        }
+       
     }
 
-}
+
