@@ -19,6 +19,7 @@
  */
 package thymeleafexamples.gtvg.web.controller;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import javax.servlet.ServletContext;
@@ -28,8 +29,11 @@ import javax.servlet.http.HttpServletResponse;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
 
-public class AvailabilityController implements IGTVGController {
+import thymeleafexamples.gtvg.business.entities.Product;
+import thymeleafexamples.gtvg.business.services.VendorService;
 
+public class AvailabilityController implements IGTVGController {
+	private ArrayList<Product> products = new ArrayList<Product>();
    // static String productValue;
     public AvailabilityController() {
         super();
@@ -38,13 +42,27 @@ public class AvailabilityController implements IGTVGController {
     
     public void process(
             final HttpServletRequest request, final HttpServletResponse response,
+            
             final ServletContext servletContext, final TemplateEngine templateEngine) 
             throws Exception {
-        
+    	
+    	final String prodValue = String.valueOf(request.getParameter("product"));
     	WebContext ctx = new WebContext(request, response, servletContext, request.getLocale());
-        ctx.setVariable("today", Calendar.getInstance());
+        ctx.setVariable("product_name",prodValue);
+        VendorService vendorService1=new VendorService();
      //   productValue=response.get
-        final String prodValue = String.valueOf(request.getParameter("product"));
+        //for(int i=0;i<5;i++)
+        	products = vendorService1.findById(1).getProducts();
+        	for(Product product:products)
+        	{
+        		System.out.println("\n"+product.getName());
+        		if(product.getName().equalsIgnoreCase(prodValue))
+        		{
+        		
+        			System.out.println("hhhhhhh");
+        			ctx.setVariable("productName", vendorService1.findById(1).getName());
+        		}
+        	}
         templateEngine.process("availability", ctx, response.getWriter());
         System.out.println("value is" + prodValue);
     }

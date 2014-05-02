@@ -23,10 +23,10 @@
         </tr>
       </thead>
       <tbody th:remove="all-but-first">
-      <tr th:each= "vend : ${vends}" th:class="${vendStat.odd}? 'odd'">
-        <tr th:value="product : ${prod.name}" th:class="${prodStat.odd}? 'odd'">
+     
+        <tr th:text="${productName}">
          
-          <td th:text="${vend.prod.inStock}? #{true} : #{false}">yes</td>
+          
      <!--     <td>
             <span th:text="${#lists.size(prod.comments)}">2</span> comment/s
             <a href="comments.html" 
