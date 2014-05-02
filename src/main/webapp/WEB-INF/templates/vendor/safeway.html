@@ -4,7 +4,7 @@
       xmlns:th="http://www.thymeleaf.org">
 
   <head>
-    <title>Good Thymes Virtual Grocery</title>
+    <title>Virtual Grocery Store</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" media="all" href="../../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
   </head>
@@ -33,14 +33,22 @@
         <td th:text="${p.name}">Default</td>
         <td th:text="${p.price}">Default</td>
         <td th:text="${p.inStock}">Default</td>
-         <td>
+        <!-- <td>
           <form action="/safeway.html" th:action="@{/vendor/safeway}">
       			<fieldset>
       			<input type="submit" value="Add to Cart" />
      		 	</fieldset>
     	 </form>
-    	</td>
-        <td><a href="/Checkout.html" th:href="@{/Checkout(prodId=${p.id})}">Buy</a></td>
+    	</td> -->
+    	<td><a href="Checkout.html" th:href="@{/Checkout(prodId=${p.id})}">Add To Cart</a></td>
+        <td><a href="Checkout.html" th:href="@{/Checkout(prodId=${p.id})}">Buy</a></td>
+        <!--  <td><form action="Checkout.html" th:action="@{/Checkout(prodId=${p.id})}">
+      			<fieldset>
+        		<input type="submit" value="Buy" />
+     		 	</fieldset>
+    		</form>
+    	</td> -->
+
       </tr>
     </table>
   
