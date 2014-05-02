@@ -35,16 +35,10 @@ import thymeleafexamples.gtvg.business.entities.Product;
 import thymeleafexamples.gtvg.business.services.VendorService;
 
 public class AvailabilityController implements IGTVGController {
-	private ArrayList<Product> products = new ArrayList<Product>();
-	private ArrayList<Product> products1 = new ArrayList<Product>();
-	private ArrayList<Product> products2 = new ArrayList<Product>();
-	private ArrayList<Product> products3 = new ArrayList<Product>();
-	private ArrayList<Product> products4 = new ArrayList<Product>();
-	//private Map<Integer,ArrayList<Product>> m = new HashMap<Integer,ArrayList<Product>>();
-	//private String[] availablestore=new String[8];
-	//private ArrayList<Product> products1 = new ArrayList<Product>();
-	//private ArrayList<Product> products2 = new ArrayList<Product>();
-   // static String productValue;
+	
+	private Map<Integer,ArrayList<Product>> m = new HashMap<Integer,ArrayList<Product>>();
+	private ArrayList<String> availablestore=new ArrayList<String>();
+	
     public AvailabilityController() {
         super();
     }
@@ -60,100 +54,24 @@ public class AvailabilityController implements IGTVGController {
     	WebContext ctx = new WebContext(request, response, servletContext, request.getLocale());
         //ctx.setVariable("product_name",prodValue);
         VendorService vendorService1=new VendorService();
-        products = vendorService1.findById(1).getProducts();
-        products1 = vendorService1.findById(2).getProducts();
-        products2 = vendorService1.findById(3).getProducts();
-        products3 = vendorService1.findById(4).getProducts();
-        products4=vendorService1.findById(5).getProducts();
-        for(Product product:products)
-    	{
-    		//System.out.println("\n"+product.getName());
-    		if(product.getName().equalsIgnoreCase(prodValue))
-    		{
-    		
-    			//System.out.println("hhhhhhh");
-    			//availablestore[0]=vendorService1.findById(1).getName();
-    			ctx.setVariable("storeName1", vendorService1.findById(1).getName());
-    		}
-    	}
-        for(Product product:products1)
-    	{
-    		//System.out.println("\n"+product.getName());
-    		if(product.getName().equalsIgnoreCase(prodValue))
-    		{
-    		
-    			//System.out.println("hhhhhhh");
-    			//availablestore[1]=vendorService1.findById(2).getName();
-    			ctx.setVariable("storeName2", vendorService1.findById(2).getName());
-    		}
-    	}
-        for(Product product:products2)
-    	{
-    		//System.out.println("\n"+product.getName());
-    		if(product.getName().equalsIgnoreCase(prodValue))
-    		{
-    		
-    			//System.out.println("hhhhhhh");
-    			//availablestore[2]=vendorService1.findById(2).getName();
-    			ctx.setVariable("storeName3", vendorService1.findById(3).getName());
-    		}
-    	}
-        for(Product product:products3)
-    	{
-    		//System.out.println("\n"+product.getName());
-    		if(product.getName().equalsIgnoreCase(prodValue))
-    		{
-    		
-    			//System.out.println("hhhhhhh");
-    			//availablestore[2]=vendorService1.findById(2).getName();
-    			ctx.setVariable("storeName4", vendorService1.findById(4).getName());
-    		}
-    	}
-        for(Product product:products4)
-    	{
-    		//System.out.println("\n"+product.getName());
-    		if(product.getName().equalsIgnoreCase(prodValue))
-    		{
-    		
-    			//System.out.println("hhhhhhh");
-    			//availablestore[2]=vendorService1.findById(2).getName();
-    			ctx.setVariable("storeName5", vendorService1.findById(5).getName());
-    		}
-    	}
-      //  ctx.setVariable("productName", availablestore);
-     //   productValue=response.get
-        //for(int i=0;i<5;i++)
-        
-        /*	products = vendorService1.findById(1).getProducts();
-        	//private ArrayList<Product> products = new ArrayList<Product>();
-        	for(Product product:products)
-        	{
-        		//System.out.println("\n"+product.getName());
-        		if(product.getName().equalsIgnoreCase(prodValue))
-        		{
-        		
-        			//System.out.println("hhhhhhh");
-        			ctx.setVariable("productName", vendorService1.findById(1).getName());
-        		}
-        	}*/
-      /*  int j=1;
+      
         int p=1;
         for(int i=1;i<6;i++)
         {
          m.put(i,vendorService1.findById(i).getProducts());	
-        }
-         for(Product product:m.get(p))
+        
+         for(Product product:m.get(i))
          {
         	 if(product.getName().equalsIgnoreCase(prodValue))
         	 {
-        		 availablestore[j]=vendorService1.findById(p).getName();
-        		 j++;
+        		 availablestore.add(vendorService1.findById(i).getName());
+        		 
         	 }
-        		 p++;
+        		 
          }
         
-        */
-       // ctx.setVariable("productName", availablestore);
+        }
+       ctx.setVariable("storeName", availablestore);
         templateEngine.process("availability", ctx, response.getWriter());
         System.out.println("value is" + prodValue);
     }

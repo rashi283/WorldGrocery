@@ -22,30 +22,54 @@
       
         </tr>
       </thead>
-      <tbody th:remove="all-but-first">
-     <tr>
-        <td th:text="${storeName1}">Not Available
+      <tbody th:remove="all-but-first"> 
+     <tr th:each="p : ${storeName}" th:class="${pStat.odd}? 'odd'">
+      
+          <td th:text="${p}">Not Available
          
           </td>
-          <td th:text="${storeName2}">Not Available
+     
+    
+      
+         
+     </tr>
+     
+     </tbody>
+    </table>
+     
+    <!--   <tr th:text="${storeName1}">   <td>Not Available
          
           </td>
-          <td th:text="${storeName3}">Not Available
+     </tr>  
+     <tr th:text="${storeName2}">   
+          <td>Not Available
          
-          </td>
-          <td th:text="${storeName4}">Not Available
+          </td></tr>
+      <tr th:text="${storeName3}">    <td>Not Available
          
-          </td>
-          <td th:text="${storeName5}">Not Available
+          </td></tr>
+     <tr th:text="${storeName4}">     <td>Not Available
          
-          </td>
-     <!--     <td>
+          </td></tr>
+        <tr th:text="${storeName5}">  <td>Not Available
+         
+          </td></tr>
+          
+          <ul>
+          <li th:text="${storeName1}"></li>
+          <li th:text="${storeName2}"></li>
+          <li th:text="${storeName3}"></li>
+          <li th:text="${storeName4}"></li>
+          <li th:text="${storeName5}"></li>
+          </ul>-->
+          
+      <!--     <td>
             <span th:text="${#lists.size(prod.comments)}">2</span> comment/s
             <a href="comments.html" 
                th:href="@{/product/comments(prodId=${prod.id})}" 
                th:unless="${#lists.isEmpty(prod.comments)}">view</a> 
-          </td>--> 
-        </tr>
+          </td> 
+       
         <tr class="odd">
           <td>Blue Lettuce</td>
           <td>9.55</td>
@@ -62,9 +86,8 @@
             <span>3</span> comment/s
             <a href="comments.html">view</a>
           </td>
-        </tr>
-      </tbody>
-    </table>
+        </tr>-->
+     
   
     <p>
       <a href="../home.html" th:href="@{/}">Return to home</a>
