@@ -63,6 +63,8 @@ public class AvailabilityController implements IGTVGController {
         products = vendorService1.findById(1).getProducts();
         products1 = vendorService1.findById(2).getProducts();
         products2 = vendorService1.findById(3).getProducts();
+        products3 = vendorService1.findById(4).getProducts();
+        products4=vendorService1.findById(5).getProducts();
         for(Product product:products)
     	{
     		//System.out.println("\n"+product.getName());
