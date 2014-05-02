@@ -32,7 +32,7 @@
         <td th:text="${p.name}">Default</td>
         <td th:text="${p.price}">Default</td>
         <td th:text="${p.inStock}">Default</td>
-        <td>Buy</td>
+        <td><a href="Checkout.html" th:href="@{/Checkout(prodId=${p.id})}">Buy</a></td>
       </tr>
     </table>
   
