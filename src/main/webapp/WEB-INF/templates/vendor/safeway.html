@@ -35,12 +35,17 @@
         <td th:text="${p.inStock}">Default</td>
         <td>
           <form action="/safeway.html" th:action="@{/vendor/safeway}">
-      		<fieldset>
-        	<input type="submit" value="Add to Cart" />
-     		 </fieldset>
+      			<fieldset>
+        		<input type="submit" value="Add to Cart" />
+     		 	</fieldset>
+    	 </form>
+    	</td>
+        <td><form action="/safeway.html" th:action="@{/vendor/safeway}">
+      			<fieldset>
+        		<input type="submit" value="Buy" />
+     		 	</fieldset>
     		</form>
     	</td>
-        <td>Buy</td>
       </tr>
     </table>
   

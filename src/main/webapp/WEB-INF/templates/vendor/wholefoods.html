@@ -11,10 +11,10 @@
 
   <body id="body">
   
-  	<!--div>
-      <img src="../../images/whole-foods-logo.png" alt="Safeway logo" title="Safeway logo" 
-           th:src="@{/images/whole-foods-logo.png}" th:alt-title="#{logo}" />
-    </div-->
+  	<div>
+      <img src="../../images/WholeFoods.jpg"  alt="WholeFoods logo" title="WholeFoods logo" 
+           th:src="@{/images/WholeFoods.jpg}" th:alt-title="#{logo}" />
+    </div>
 
     <h1>Whole Foods <!--span th:text="${vend1.id}">Hot Garlic</span--></h1>
   
@@ -40,7 +40,12 @@
      		 </fieldset>
     		</form>
     	</td>
-        <td>Buy</td>
+        <td><form action="/safeway.html" th:action="@{/vendor/safeway}">
+      			<fieldset>
+        		<input type="submit" value="Buy" />
+     		 	</fieldset>
+    		</form>
+    		</td>
       </tr>
     </table>
   

@@ -4,17 +4,17 @@
       xmlns:th="http://www.thymeleaf.org">
 
   <head>
-    <title>Good Thymes Virtual Grocery</title>
+    <title>Virtual Grocery</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" media="all" href="../../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
   </head>
 
   <body id="body">
   
-  	<!--div>
-      <img src="../../images/Sprouts.png" alt="Safeway logo" title="Safeway logo" 
-           th:src="@{/images/Sprouts.png}" th:alt-title="#{logo}" />
-    </div-->
+  	<div>
+      <img src="../../images/sprouts.jpg" alt="Sprouts logo" title="Sprouts logo" 
+           th:src="@{/images/sprouts.jpg}" th:alt-title="#{logo}" />
+    </div>
 
     <h1>Sprouts <!--span th:text="${vend1.id}">Hot Garlic</span--></h1>
   
@@ -40,7 +40,11 @@
      		 </fieldset>
     		</form>
     	</td>
-        <td>Buy</td>
+        <td><form action="/safeway.html" th:action="@{/vendor/safeway}">
+      			<fieldset>
+        		<input type="submit" value="Buy" />
+     		 	</fieldset>
+    		</form></td>
       </tr>
     </table>
   
