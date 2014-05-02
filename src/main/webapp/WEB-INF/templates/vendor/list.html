@@ -21,7 +21,7 @@
           <td th:text="${vend.id}">Onions</td>
           <td th:text="${vend.name}">2.41</td>
           <!--td th:text="${vend.product}? #{true} : #{false}">yes</td-->
-          <td>
+          <td th:switch="${vend.name}">
             <!--span th:text="${#lists.size(vend.products)}">2</span> comment/s-->
             <a href="/safeway.html"
             th:href="@{/vendor/safeway}" >view</a>

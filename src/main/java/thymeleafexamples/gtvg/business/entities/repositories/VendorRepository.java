@@ -50,29 +50,29 @@ public class VendorRepository
         vend1.getProducts().add(prod2);
         //
         
-//        final Vendor vend2 = new Vendor();
-//        vend2.setId(Integer.valueOf(2));
-//        vend2.setName("Trader Joe");
-//        vend2.setProducts();
-//        this.vendorsById.put(vend2.getId(), vend2);    
-//        
-//        final Vendor vend3 = new Vendor();
-//        vend3.setId(Integer.valueOf(3));
-//        vend3.setName("Whole Foods");
-//        vend3.setProducts();
-//        this.vendorsById.put(vend3.getId(), vend3);    
-//        
-//        final Vendor vend4 = new Vendor();
-//        vend4.setId(Integer.valueOf(4));
-//        vend4.setName("Sprouts");
-//        vend4.setProducts();
-//        this.vendorsById.put(vend4.getId(), vend4);  
-//        
-//        final Vendor vend5 = new Vendor();
-//        vend5.setId(Integer.valueOf(5));
-//        vend5.setName("Target");
-//        vend5.setProducts();
-//        this.vendorsById.put(vend5.getId(), vend5);  
+        final Vendor vend2 = new Vendor();
+        vend2.setId(Integer.valueOf(2));
+        vend2.setName("Trader Joe");
+        vend2.setProducts();
+        this.vendorsById.put(vend2.getId(), vend2);    
+        
+        final Vendor vend3 = new Vendor();
+        vend3.setId(Integer.valueOf(3));
+        vend3.setName("Whole Foods");
+        vend3.setProducts();
+        this.vendorsById.put(vend3.getId(), vend3);    
+        
+        final Vendor vend4 = new Vendor();
+        vend4.setId(Integer.valueOf(4));
+        vend4.setName("Sprouts");
+        vend4.setProducts();
+        this.vendorsById.put(vend4.getId(), vend4);  
+        
+        final Vendor vend5 = new Vendor();
+        vend5.setId(Integer.valueOf(5));
+        vend5.setName("Target");
+        vend5.setProducts();
+        this.vendorsById.put(vend5.getId(), vend5);  
         
     }
     
