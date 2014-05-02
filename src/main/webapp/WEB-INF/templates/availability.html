@@ -4,30 +4,39 @@
       xmlns:th="http://www.thymeleaf.org">
 
   <head>
-    <title>Good Thymes Virtual Grocery</title>
+    <title>Virtual Grocery</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" media="all" href="../../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
   </head>
 
   <body id="body">
 
-    <h1>Availability</h1>
-  <h1>Product list</h1>
+    <h1>Availability </h1>
+  
   
     <table>
       <thead>
         <tr>
           <th>Available In Stores</th>
+          <th>Add to Cart</th>
          
       
         </tr>
       </thead>
       <tbody th:remove="all-but-first"> 
      <tr th:each="p : ${storeName}" th:class="${pStat.odd}? 'odd'">
-      
+     
           <td th:text="${p}">Not Available
          
           </td>
+          <td>
+          <form action="/safeway.html" th:action="@{/vendor/safeway}">
+      <fieldset>
+       
+        <input type="submit" value="Add to Cart" />
+        
+      </fieldset>
+    </form></td>
         
      </tr>
      

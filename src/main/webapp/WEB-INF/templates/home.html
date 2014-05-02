@@ -4,7 +4,7 @@
       xmlns:th="http://www.thymeleaf.org">
 
   <head>
-    <title>Good Thymes Virtual Grocery</title>
+    <title>Virtual Grocery</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" media="all" href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
   </head>
@@ -18,7 +18,7 @@
   
     <!--p th:utext="#{home.welcome(${session.user.name})}">Welcome to our grocery store, Sebastian!</p-->
   
-  	<p>Welcome to World Grocery, <span th:text="${username}"></span></p>
+  	<p>Welcome to Virtual Grocery, <span th:text="${username}"></span></p>
   
   	<form action="login.html" th:action="@{/login}">
       <fieldset>
@@ -51,7 +51,7 @@
 	<form action="availability.html" th:action="@{/availability}">
       <fieldset>
         <input type="text" name="product" />
-        <input type="submit" value="Find available products!" />
+        <input type="submit" value="Find in Stores!" />
         <!--a href="home.html" th:href="@{/result/list}">view</a-->
       </fieldset>
     </form>
