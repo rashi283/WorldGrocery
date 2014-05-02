@@ -24,6 +24,7 @@
           <th>PRODUCT</th>
           <th>PRICE</th>
           <th>IN STOCK</th>
+          <th>Add to chart</th>
           <th>BUY</th>
         </tr>
       </thead>
@@ -32,7 +33,14 @@
         <td th:text="${p.name}">Default</td>
         <td th:text="${p.price}">Default</td>
         <td th:text="${p.inStock}">Default</td>
-        <td><a href="Checkout.html" th:href="@{/Checkout(prodId=${p.id})}">Buy</a></td>
+         <td>
+          <form action="/safeway.html" th:action="@{/vendor/safeway}">
+      			<fieldset>
+      			<input type="submit" value="Add to Cart" />
+     		 	</fieldset>
+    	 </form>
+    	</td>
+        <td><a href="/Checkout.html" th:href="@{/Checkout(prodId=${p.id})}">Buy</a></td>
       </tr>
     </table>
   
