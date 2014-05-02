@@ -112,7 +112,7 @@ public class VendorRepository
         
         //Vendor5
         final Vendor vend5 = new Vendor();
-        vend5.setId(Integer.valueOf(2));
+        vend5.setId(Integer.valueOf(5));
         vend5.setName("Target");
         
         final Product prod51 = new Product();

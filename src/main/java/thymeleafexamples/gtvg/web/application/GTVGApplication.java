@@ -35,10 +35,14 @@ import thymeleafexamples.gtvg.web.controller.OrderListController;
 import thymeleafexamples.gtvg.web.controller.ProductCommentsController;
 import thymeleafexamples.gtvg.web.controller.ProductListController;
 import thymeleafexamples.gtvg.web.controller.SafewayController;
+import thymeleafexamples.gtvg.web.controller.SproutsController;
 import thymeleafexamples.gtvg.web.controller.SubscribeController;
+import thymeleafexamples.gtvg.web.controller.TargetController;
+import thymeleafexamples.gtvg.web.controller.TraderJoeController;
 import thymeleafexamples.gtvg.web.controller.UserProfileController;
 import thymeleafexamples.gtvg.web.controller.VendorListController;
 import thymeleafexamples.gtvg.web.controller.VendorProductsController;
+import thymeleafexamples.gtvg.web.controller.WholeFoodsController;
 
 
 public class GTVGApplication {
@@ -90,6 +94,10 @@ public class GTVGApplication {
         controllersByURL.put("/vendor/list", new VendorListController());
         controllersByURL.put("/vendor/products", new VendorProductsController());
         controllersByURL.put("/vendor/safeway", new SafewayController());
+        controllersByURL.put("/vendor/traderjoe", new TraderJoeController());
+        controllersByURL.put("/vendor/wholefoods", new WholeFoodsController());
+        controllersByURL.put("/vendor/sprouts", new SproutsController());
+        controllersByURL.put("/vendor/target", new TargetController());
         controllersByURL.put("/availability", new AvailabilityController());
         
         return controllersByURL;
