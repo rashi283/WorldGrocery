@@ -33,7 +33,9 @@
         <td th:text="${p.name}">Default</td>
         <td th:text="${p.price}">Default</td>
         <td th:text="${p.inStock}">Default</td>
-        <td>
+        <td><a href="Checkout.html" th:href="@{/Checkout(prodId=${p.id})}">Add To Cart</a></td>
+        <td><a href="https://www.paypal.com" th:href="@{https://www.paypal.com}">Buy</a></td>
+        <!-- <td>
           <form action="/safeway.html" th:action="@{/vendor/safeway}">
       		<fieldset>
         	<input type="submit" value="Add to Cart" />
@@ -44,7 +46,7 @@
       			<fieldset>
         		<input type="submit" value="Buy" />
      		 	</fieldset>
-    		</form></td>
+    		</form></td>-->
       </tr>
     </table>
   	  <p>

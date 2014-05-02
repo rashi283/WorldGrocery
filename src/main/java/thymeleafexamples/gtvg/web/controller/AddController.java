@@ -60,18 +60,46 @@ public class AddController implements IGTVGController {
         ProductService productService1=new ProductService();
         
         products = vendorService1.findById(1).getProducts();
-        //products1 = vendorService1.findById(2).getProducts();
-        //products2 = vendorService1.findById(3).getProducts();
-        //products3 = vendorService1.findById(4).getProducts();
-        //products4=vendorService1.findById(5).getProducts();
+        products1 = vendorService1.findById(2).getProducts();
+        products2 = vendorService1.findById(3).getProducts();
+        products3 = vendorService1.findById(4).getProducts();
+        products4=vendorService1.findById(5).getProducts();
         
         for(Product product:products)
         {
         	if(product.getId() == prodId){
         		ctx.setVariable("product", product);
         	}
+        	       	
         	
         }
+        for(Product product1:products1)
+        	{
+        	if(product1.getId() == prodId){
+        		ctx.setVariable("product", product1);
+        	}
+        	}
+        
+        for(Product product2:products2)
+    	{
+        	if(product2.getId() == prodId){
+        		ctx.setVariable("product", product2);
+        	}
+    	}
+        
+        for(Product product3:products3)
+    	{
+        	if(product3.getId() == prodId){
+        		ctx.setVariable("product", product3);
+        	}
+    	}
+        
+        for(Product product4:products4)
+    	{
+        	if(product4.getId() == prodId){
+        		ctx.setVariable("product", product4);
+        	}
+    	}
                 
         templateEngine.process("Checkout", ctx, response.getWriter());
         
