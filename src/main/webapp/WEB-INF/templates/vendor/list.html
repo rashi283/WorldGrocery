@@ -20,11 +20,18 @@
         <tr th:each="vend : ${vends}" th:class="${vendStat.odd}? 'odd'">
           <td th:text="${vend.id}">Onions</td>
           <td th:text="${vend.name}">2.41</td>
-          <!--td th:text="${vend.product}? #{true} : #{false}">yes</td-->
+          <!--Switch Case for URL-->
           <td th:switch="${vend.name}">
-            <!--span th:text="${#lists.size(vend.products)}">2</span> comment/s-->
-            <a href="/safeway.html"
-            th:href="@{/vendor/safeway}" >view</a>
+            <p th:case="'Safeway'"><a href="/safeway.html"
+            th:href="@{/vendor/safeway}" >Safeway link</a></p>
+            <p th:case="'Trader Joe'"><a href="/safeway.html"
+            th:href="@{/vendor/traderjoe}" >Trader Joe Link</a></p>
+            <p th:case="'Whole Foods'"><a href="/safeway.html"
+            th:href="@{/vendor/wholefoods}" >Whole Foods Link</a></p>
+            <p th:case="'Sprouts'"><a href="/safeway.html"
+            th:href="@{/vendor/sprouts}" >Sprouts Link</a></p>
+            <p th:case="'Target'"><a href="/safeway.html"
+            th:href="@{/vendor/target}" >Target Link</a></p>
           </td>
         </tr>
         <tr class="odd">
