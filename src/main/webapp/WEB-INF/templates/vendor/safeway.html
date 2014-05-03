@@ -8,16 +8,25 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" media="all" href="../../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
   </head>
-
+	
   <body id="body">
-  
+  	
   	<div>
       <img src="../../images/safeway.png" alt="Safeway logo" title="Safeway logo" 
            th:src="@{/images/safeway.png}" th:alt-title="#{logo}" />
     </div>
 
     <h1>Safeway <!--span th:text="${vend1.id}">Hot Garlic</span--></h1>
-  
+  <p> <div>
+  <table border="1">
+	<tr>
+  	<td><a href="http://shop.safeway.com/ecom/home" 
+  		th:href="@{http://shop.safeway.com/ecom/home}">HOME</a></td>
+  <td><a href="http://www.careersatsafeway.com" 
+  		th:href="@{http://www.careersatsafeway.com/}">Careers</a></td>		
+  <td><a href="http://www.safeway.com/ShopStores/Contact-Us" 
+  		th:href="@{http://www.safeway.com/ShopStores/Contact-Us}">Contact US</a></td>
+  </tr></table></div> </p>
     <table>
     <thead>
         <tr>

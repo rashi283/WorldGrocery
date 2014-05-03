@@ -16,6 +16,18 @@
            th:src="@{/images/target1.jpg}" th:alt-title="#{logo}" />
     </div>
 
+<p> <div>
+  <table border="1">
+	<tr>
+  	<td><a href="http://www.target.com/" 
+  		th:href="@{http://www.target.com/}">HOME</a></td>
+  <td><a href="http://www.target.com/store-locator/find-stores#?lnk=gnav_findastore" 
+  		th:href="@{http://www.target.com/store-locator/find-stores#?lnk=gnav_findastore}">Locate a Store</a></td>		
+  <td><a href="http://www.target.com/np/more/-/N-5xsxf#?lnk=gnav_more_15_0" 
+  		th:href="@{http://www.target.com/np/more/-/N-5xsxf#?lnk=gnav_more_15_0}">More</a></td>
+  </tr></table></div> </p>
+
+
     <h1>Target <!--span th:text="${vend1.id}">Hot Garlic</span--></h1>
   
     <table>

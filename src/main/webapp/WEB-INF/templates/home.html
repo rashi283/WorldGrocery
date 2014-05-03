@@ -16,14 +16,14 @@
            th:src="@{/images/grocerry.png}" th:alt-title="#{logo}" />
     </div>
   
-    <!--p th:utext="#{home.welcome(${session.user.name})}">Welcome to our grocery store, Sebastian!</p-->
+   <!--   <p> th:utext="#{home.welcome(${session.user.name})}"Welcome to our grocery store, Sebastian!</p>-->
   
-  	<p>Welcome to Virtual Grocery, <span th:text="${username}"></span></p>
+  	  <p>Welcome to Virtual Grocery, John   </p>
   
   	<form action="login.html" th:action="@{/login}">
       <fieldset>
         <input type="submit" value="Login" />
-        <!--a href="home.html" th:href="@{/result/list}">view</a-->
+        <!--a href="home.html" th:href="@{/result/list}">view</a>-->
       </fieldset>
     </form>
   	

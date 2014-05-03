@@ -48,7 +48,7 @@ public class HomeController implements IGTVGController {
         
     	final String username = String.valueOf(request.getParameter("username"));
     	final String password = String.valueOf(request.getParameter("password"));
-    	String tempString = "rashi";
+    	String tempString = "John";
     	
     	CustomerService customerService = new CustomerService();
     	ArrayList<Customer> tempCustomers = (ArrayList<Customer>) customerService.findAll();
